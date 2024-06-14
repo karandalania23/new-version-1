@@ -24,7 +24,7 @@ import { useTheme } from "@mui/material/styles";
 import { ResponsiveLineCanvas } from "@nivo/line";
 import DatePickerWithRange from "../components/shared/calendar";
 import { addDays, format } from "date-fns";
-
+import { CiLight, CiDark  } from "react-icons/ci";
 
 const MapContainer = dynamic(
   () => import("react-leaflet").then((mod) => mod.MapContainer),
@@ -187,12 +187,17 @@ export default function Home() {
         <div className="inline-flex flex-col justify-center items-center gap-14 relative ml-3">
           <div className="inline-flex flex-row justify-between items-center w-full">
             <div className="text-3xl ml-2 mt-5">UmidaAg</div>
+            <div className="flex">
+            <CiLight className="mt-3 text-2xl"/>
             <Switch
               checked={isDarkMode}
               onChange={toggleDarkMode}
               color="primary"
-              className="mt-8"
+              className="mt-1"
             />
+            <CiDark className="mt-3 text-2xl"/>
+            </div>
+            
           </div>
           <div className="inline-flex flex-col  gap-[50px] relative ml-4">
             <div className="inline-flex justify-center items-center gap-[30px] relative">
